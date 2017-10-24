@@ -51,22 +51,24 @@
         app:layout_constraintLeft_toLeftOf="@+id/text_height" />
 
     <Button
+        android:id="@+id/b_cal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="13dp"
+        android:onClick="bmi"
+        android:text="Create BMI"
+        app:layout_constraintLeft_toLeftOf="@+id/ed_height"
+        app:layout_constraintTop_toBottomOf="@+id/ed_height" />
+
+    <Button
         android:id="@+id/b_help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="8dp"
-        android:text="Button"
+        android:layout_marginTop="17dp"
+        android:text="Help"
         app:layout_constraintLeft_toLeftOf="@+id/b_cal"
         app:layout_constraintTop_toBottomOf="@+id/b_cal" />
-
-    <Button
-        android:id="@+id/b_cal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:text="Button"
-        app:layout_constraintTop_toBottomOf="@+id/ed_height"
-        tools:layout_editor_absoluteX="33dp" />
 
 </android.support.constraint.ConstraintLayout>
