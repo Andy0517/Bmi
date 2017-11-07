@@ -5,16 +5,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    String s = new String("abc");
+    View.OnClickListener listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
 
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
        // getResources().getString(R.string.app_name);
+        Button bhelp = (Button) findViewById(R.id.b_help);
+        bhelp.setOnClickListener(listener);
     }
      public void bmi(View view){
         //Log.d("MainActivit","testing bmi method");
