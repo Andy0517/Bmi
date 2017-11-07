@@ -9,4 +9,6 @@
     <string name="ok">好</string>
     <string name="weight">體重：</string>
     <string name="your_bmi">你的ｂｍｉ值：</string>
+    <string name="bmi_help">bmi說明</string>
+    <string name="bmi_method">體重/(身高*身高)</string>
 </resources>

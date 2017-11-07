@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bmi_help">bmi說明</string>
+    <string name="bmi_method">體重/(身高*身高)</string>
+</resources>

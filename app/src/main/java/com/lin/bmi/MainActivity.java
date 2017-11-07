@@ -23,7 +23,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
        // getResources().getString(R.string.app_name);
         Button bhelp = (Button) findViewById(R.id.b_help);
-        bhelp.setOnClickListener(listener);
+        bhelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle(R.string.bmi_help)
+                        .setMessage(R.string.bmi_method)
+                        .setPositiveButton(R.string.ok,null)
+                        .setNegativeButton(R.string.cancel,null)
+                        // .setNeutralButton("hi",null)
+                        .show();
+            }
+        });
     }
      public void bmi(View view){
         //Log.d("MainActivit","testing bmi method");
