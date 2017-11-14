@@ -43,14 +43,26 @@ public class MainActivity extends AppCompatActivity {
         float weight = Float.parseFloat(edWeight.getText().toString());
         float height = Float.parseFloat(edHeight.getText().toString());
         float bmi = weight/(height*height);
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.bmi_titile)
-                .setMessage(getString(R.string.your_bmi)+bmi)
-                .setPositiveButton(R.string.ok,null)
-                .setNegativeButton(R.string.cancel,null)
-               // .setNeutralButton("hi",null)
-                .show();
+       if(bmi<20){
+             new AlertDialog.Builder(this)
+                     .setTitle(R.string.bmi_titile)
+                     .setMessage(getString(R.string.your_bmi) + bmi+"請多吃點")
+                     .setPositiveButton(R.string.ok, null)
+                     .setNegativeButton(R.string.cancel, null)
+                 // .setNeutralButton("hi",null)
+                     .show();
        /* Log.d("MainActivity","bmi:"+bmi);*/
-        Toast.makeText(this,getString(R.string.your_bmi)+bmi+":"+bmi, Toast.LENGTH_LONG).show();
+         Toast.makeText(this, getString(R.string.your_bmi) + bmi + ":" + bmi, Toast.LENGTH_LONG).show();}
+        else {
+             new AlertDialog.Builder(this)
+                     .setTitle(R.string.bmi_titile)
+                     .setMessage(getString(R.string.your_bmi) + bmi)
+                     .setPositiveButton(R.string.ok, null)
+                     .setNegativeButton(R.string.cancel, null)
+                     // .setNeutralButton("hi",null)
+                     .show();
+       /* Log.d("MainActivity","bmi:"+bmi);*/
+             Toast.makeText(this, getString(R.string.your_bmi) + bmi + ":" + bmi, Toast.LENGTH_LONG).show();
+         }
     }
 }
