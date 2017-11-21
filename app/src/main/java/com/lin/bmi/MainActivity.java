@@ -1,5 +1,6 @@
 package com.lin.bmi;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     String s = new String("abc");
     View.OnClickListener listener = new View.OnClickListener() {
         @Override
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+    private EditText edWeight;
+    private EditText edHeight;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +42,11 @@ public class MainActivity extends AppCompatActivity {
     }
      public void bmi(View view){
         //Log.d("MainActivit","testing bmi method");
-        EditText edWeight = (EditText) findViewById(R.id.ed_weight);
-        EditText edHeight = (EditText) findViewById(R.id.ed_height);
+         findview();
         float weight = Float.parseFloat(edWeight.getText().toString());
         float height = Float.parseFloat(edHeight.getText().toString());
         float bmi = weight/(height*height);
-         if(height>3){
+       /*  if(height>3){
              new AlertDialog.Builder(this)
                      .setMessage("身高單位應為公尺")
                      .setPositiveButton("OK",null)
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                      .setNegativeButton(R.string.cancel, null)
                  // .setNeutralButton("hi",null)
                      .show();
-       /* Log.d("MainActivity","bmi:"+bmi);*/
+        Log.d("MainActivity","bmi:"+bmi);
          Toast.makeText(this, getString(R.string.your_bmi) + bmi + ":" + bmi, Toast.LENGTH_LONG).show();}
         else {
              new AlertDialog.Builder(this)
@@ -65,9 +68,18 @@ public class MainActivity extends AppCompatActivity {
                      .setPositiveButton(R.string.ok, null)
                      .setNegativeButton(R.string.cancel, null)
                      // .setNeutralButton("hi",null)
-                     .show();
+                     .show();*/
+       //                                                                從....  , 到 .....
+            Intent intent= new Intent(this,ResaultActivity.class);
+            intent.putExtra(getString(R.string.exbmi),bmi);
+            startActivity(intent);
        /* Log.d("MainActivity","bmi:"+bmi);*/
-             Toast.makeText(this, getString(R.string.your_bmi) + bmi + ":" + bmi, Toast.LENGTH_LONG).show();
-         }
+           //  Toast.makeText(this, getString(R.string.your_bmi) + bmi + ":" + bmi, Toast.LENGTH_LONG).show();
+      //   }
+    }
+
+    private void findview() {
+        edWeight = (EditText) findViewById(R.id.ed_weight);
+        edHeight = (EditText) findViewById(R.id.ed_height);
     }
 }
